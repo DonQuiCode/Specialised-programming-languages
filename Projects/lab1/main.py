@@ -24,7 +24,7 @@ def mod(a,b):
 def display_history():
   if history:
     print("\nІсторія обчислень за сесію:")
-    for i, expression in enumerate(history, start=1):
+    for i, expression in enumerate(history, start=1): # enumerate(history, start=1) - перелічування з індексом починаючи з 1
       num1, num2, operator, result = expression
       print(f"{i}) {num1} {operator} {num2} = {result}")
   else:
@@ -80,6 +80,7 @@ def call_menu():
     print("Історія обчислень за всі сесії:")
     with open('history.txt', 'r') as file:
       print(file.read())
+    display_history()
     call_menu()
   elif choice == '5':
     save_history()
@@ -89,7 +90,7 @@ def call_menu():
   else:
     print("Помилка: невідома операція")
     call_menu()
-  
+
 operations = {'+':add, '-':sub, '*':mul, '/':div, '^':exp, '√':root, '%':mod}
 
 operators = ['+', '-', '*', '/', '^', '√', '%']
