@@ -1,5 +1,6 @@
 import math
 
+#Math operations
 def add(a,b):
     return a+b
  
@@ -24,7 +25,7 @@ def mod(a,b):
 def display_history():
     if history:
         print("\nІсторія обчислень за сесію:")
-        for i, expression in enumerate(history, start=1): # enumerate(history, start=1) - перелічування з індексом починаючи з 1
+        for i, expression in enumerate(history, start=1):
             num1, num2, operator, result = expression
             print(f"{i}) {num1} {operator} {num2} = {result}")
     else:
@@ -51,7 +52,7 @@ def ask_if_repeat():
         save_history()
         display_history()
 
-#show menu options
+#Show menu options
 def show_options():
     print("[0] --- Продовжити обчислення")
     print("[1] --- Налаштувати кількість знаків після коми")
@@ -60,6 +61,7 @@ def show_options():
     print("[4] --- Показати історію обчислень за всі сесії")
     print("[5] --- Вихід")
 
+#Menu
 def call_menu():
     show_options()
     choice = input("Виберіть операцію: ")
@@ -108,11 +110,15 @@ while repeat:
         num2 = input("Введіть друге число: ")
         operator = input("Введіть оператор (+, -, *, /, ^, √, %): ")
 
+        #Check if operator is valid
         while operator not in operators:
             print("Помилка: невідомий оператор")
             operator = input("Введіть один з наступних операторів: +, -, *, /, ^, √, %")
-            
+        
+    
         result = round(operations[operator](float(num1), float(num2)), rounding_value)
+        
+        #Add to history
         history.append((num1, num2, operator, result))
 
         print(f"Результат: {result}\n")
