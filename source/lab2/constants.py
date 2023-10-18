@@ -1,1 +1,0 @@
-home_path = '/Users/admin/Desktop/lpnu/5 сем/Specialised programming languages/'
