@@ -1,0 +1,6 @@
+__pycache__/
+
+.DS_Store
+
+.vscode/
+source/lab2/constants.py
