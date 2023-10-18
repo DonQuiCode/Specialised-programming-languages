@@ -22,8 +22,9 @@ def display_history(history):
         print("\nІсторія обчислень пуста")
     
 #Save history to file
+HISTORY_FILE = 'source/lab1/history.txt'
 def save_history(history):
-    with open('history.txt', 'a') as file:
+    with open(HISTORY_FILE, 'a') as file:
         for i, expression in enumerate(history, start=1):
             num1, num2, operator, result = expression
             file.write(f"{i}) {num1} {operator} {num2} = {result}\n")
