@@ -44,4 +44,4 @@ UI
 Runner > Simple class to run your app (lab work)
 *This directory structure can be changed depending on your needs
 
-Налаштування логеру та базові налаштування програмного продукту мають бути в окремому файлі налаштування вашого продукту - config/init/..
+Налаштування логеру та базові налаштування програмного продукту мають бути в окремому файлі налаштування вашого продукту - config/init/...
