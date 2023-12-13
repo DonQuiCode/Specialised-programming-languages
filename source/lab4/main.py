@@ -1,28 +1,46 @@
-from art_settings import *
-from art_generation import *
+# Include the parent directory in the system's import path
+import sys
+import os
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+sys.path.append(parent_dir)
+
+# Imports
+from lab3.ascii_art_settings import AsciiArtSettings
+from lab3.ascii_art_generator import show_art
+from lab4.ascii_art_generator import settings, create_ascii_art
+
+# Constants
+FOLDER_PATH = 'source/lab4/ASCII-arts/'
+SETTINGS_FILE_PATH = 'source/lab4/settings.json'
+            
 def main():
-    settings_obj = AsciiArtSettings()
-    
-    while True:
-        print('Menu:')
-        print('1. Create art')
-        print('2. Settings')
-        print('3. Show art')
-        print('4. Exit')
+    try: 
+        settings_obj = AsciiArtSettings()
+        settings_obj.set_settings_file_path(SETTINGS_FILE_PATH)
+        settings_obj.load_settings()
         
-        user_input = input('Choose option: ')
-        
-        if user_input == '1':
-            create_ascii_art(settings_obj)
-        elif user_input == '2':
-            settings(settings_obj)
-        elif user_input == '3':
-            show_art()
-        elif user_input == '4':
-            break
-        
-    print('Bye!')
-    
+        while True:
+            print('Options (1/2/3):')
+            print('1. Create ASCII-art')
+            print('2. Show ASCII-art')
+            print('3. Settings')
+            print('4. Exit')
+            
+            user_input = input('Enter option number: ')
+            
+            if user_input == '1':
+                create_ascii_art(FOLDER_PATH, settings_obj)
+            elif user_input == '2':
+                show_art(FOLDER_PATH)
+            elif user_input == '3':
+                settings(settings_obj)
+            elif user_input == '4':
+                break
+            
+    except ValueError as e:
+        print(f"An error occurred: {e}")
+
 if __name__ == "__main__":
     main()

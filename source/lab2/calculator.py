@@ -13,6 +13,9 @@ class Calculator:
 		self.repeat = True
 		self.rounding_value = 50
 		self.operations = {'+':add, '-':sub, '*':mul, '/':div, '^':exp, '√':root, '%':mod}
+		self.num1 = 0
+		self.num2 = 0
+		
   
 	def calculate(self):
 		while self.repeat:
