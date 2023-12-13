@@ -5,3 +5,4 @@ __pycache__/
 .vscode/
 source/lab2/constants.py
 source/entities/
+source/lab7/credentials.json
