@@ -4,4 +4,4 @@ __pycache__/
 
 .vscode/
 source/lab2/constants.py
-source/lab4/art/
+source/entities/
